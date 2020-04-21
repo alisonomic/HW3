@@ -42,19 +42,19 @@ var confirmSpecialChar = confirm("Confirm if you would like to include special c
 var userPass = []
 
     if (confirmUpper) {
-    userPass = userPass.const(letterCap)
+    userPass = userPass.concat(letterCap)
     }
 
-    if (confirmLowe) {
-    userPass = userPass.const(letterLow)
+    if (confirmLower) {
+    userPass = userPass.concat(letterLow)
     }
 
     if (confirmNumbers) {
-    userPass = userPass.const(numbers)
+    userPass = userPass.concat(numbers)
     }
 
     if (confirmSpecialChar) {
-    userPass = userPass.const(specialChar)
+    userPass = userPass.concat(specialChar)
     }
 
     console.log(userPass)
