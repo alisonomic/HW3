@@ -29,18 +29,22 @@ function generatePassword() {
 
     
 //Confirm password length
-alert(`Your password will have ${confirmLength} characters`);
+alert("Your password will have " + confirmLength + " characters");
 
 
 //Confirm characters user selected
 var confirmUpper = confirm("Confirm if you would like to use uppercase letters");
-var confrimLower = confirm("Confirm if you would like to use lowercase letters");
-var numbers = confirm("Confirm if you would like numbers to be included in your password");
+var confirmLower = confirm("Confirm if you would like to use lowercase letters");
+var confirmNumbers = confirm("Confirm if you would like numbers to be included in your password");
 var confirmSpecialChar = confirm("Confirm if you would like to include special characters");
 
+//
+if (confirmUpper == false && confirmLower == false && confirmNumbers == false && confirmSpecialChar === false) {
+    alert("You must select at least one parameter");
+}
 
-//If statements for actions chosen by user
-var userPass = []
+//If statements for actions chosen by user(used concat to merge arrays)
+var userPass = [];
 
     if (confirmUpper) {
     userPass = userPass.concat(letterCap)
@@ -75,4 +79,5 @@ function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
+
 }
